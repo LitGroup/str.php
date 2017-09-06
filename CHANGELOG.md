@@ -6,4 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## 0.1.0
 ### Added
-- `Str::length()` 
+- `Str::length()`
+- `Str::trim()` 
+- `Str::ltrim()` 
+- `Str::rtrim()` 
+- `Str::isEmpty()`
+- `Str::isNotEmpty()`
+- `Str::toUpperCase()`
+- `Str::toLowerCase()`

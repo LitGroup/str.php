@@ -25,15 +25,64 @@ declare(strict_types=1);
 
 namespace Test\LitGroup\Str;
 
+use function mb_internal_encoding;
 use LitGroup\Str\Str;
 use PHPUnit\Framework\TestCase;
 
 class StrTest extends TestCase
 {
+    private static $systemEncoding;
+
+    public static function setUpBeforeClass()
+    {
+        self::$systemEncoding = mb_internal_encoding();
+        mb_internal_encoding('7bit');
+    }
+
+    public static function tearDownAfterClass()
+    {
+        mb_internal_encoding(self::$systemEncoding);
+    }
+
     function testLength(): void
     {
         self::assertEquals(0, Str::length(''));
         self::assertEquals(6, Str::length('Hello!'));
         self::assertEquals(7, Str::length('Привет!'));
+    }
+
+    function testTrim(): void
+    {
+        self::assertEquals('hello', Str::trim(' hello '));
+    }
+
+    function testLtrim(): void
+    {
+        self::assertEquals('hello ', Str::ltrim(' hello '));
+    }
+
+    function testRtrim(): void
+    {
+        self::assertEquals(' hello', Str::rtrim(' hello '));
+    }
+
+    function testEmptyPredicate(): void
+    {
+        self::assertTrue(Str::isEmpty(''));
+        self::assertFalse(Str::isEmpty(' '));
+        self::assertFalse(Str::isEmpty('hello'));
+    }
+
+    function testNotEmptyPredicate(): void
+    {
+        self::assertTrue(Str::isNotEmpty('hello'));
+        self::assertTrue(Str::isNotEmpty(' '));
+        self::assertFalse(Str::isNotEmpty(''));
+    }
+
+    function testToUpperCase(): void
+    {
+        self::assertEquals('HELLO', Str::toUpperCase('hello'));
+        self::assertEquals('ПРИВЕТ', Str::toUpperCase('привет'));
     }
 }
