@@ -26,6 +26,11 @@ declare(strict_types=1);
 namespace LitGroup\Str;
 
 use function mb_strlen;
+use function mb_strtoupper;
+use function mb_strtolower;
+use function trim;
+use function ltrim;
+use function rtrim;
 
 /**
  * Collection of static methods for manipulation with UTF-8 strings.
@@ -37,5 +42,35 @@ final class Str
     public static function length(string $str): int
     {
         return mb_strlen($str, self::ENCODING);
+    }
+
+    public static function trim(string $str): string
+    {
+        return trim($str);
+    }
+
+    public static function ltrim(string $str): string
+    {
+        return ltrim($str);
+    }
+
+    public static function rtrim(string $str): string
+    {
+        return rtrim($str);
+    }
+
+    public static function isEmpty(string $str): bool
+    {
+        return self::length($str) === 0;
+    }
+
+    public static function isNotEmpty(string $str): bool
+    {
+        return !self::isEmpty($str);
+    }
+
+    public static function toUpperCase(string $str): string
+    {
+        return mb_strtoupper($str, self::ENCODING);
     }
 }
