@@ -5,7 +5,7 @@
 ## Installation
 
 ```bash
-composer require litgroup/str:^0.1
+composer require litgroup/str:^0.2
 ```
 
 ## Example of usage
@@ -29,3 +29,22 @@ Str::trim(' hello '); // => 'hello'
 ```
 
 _Check the code to see all methods._
+
+## Using Patterns
+
+From time to time you need to check that a string matches to the pattern.
+For this purpose, this library provides the `Pattern` interface.
+`RegExp` is one implementation of `Pattern`, which represents Perl-Compatible
+Regular Expressions (PCRE).
+
+```php
+<?php
+
+use LitGroup\Str\RegExp;
+
+$emailPattern = new RegExp('/^\w+(?:[-+.\']\w+)*@\w+(?:[-.]\w+)*\.\w+(?:[-.]\w+)*$/Dsu');
+
+if ($emailPattern->isSatisfiedBy('john@example.com')) {
+    echo 'This is a valid email address!';
+}
+```
