@@ -19,10 +19,10 @@
             "vendor/bin/phpunit --configuration ."
         ],
         "test-coverage-html": [
-            "phpdbg -qrr vendor/bin/phpunit --configuration . --coverage-html build/coverage"
+            "phpdbg -qrr vendor/bin/phpunit --configuration=. --coverage-html=build/coverage"
         ],
         "test-ci": [
-            "phpdbg -qrr vendor/bin/phpunit --configuration . --coverage-text --colors never"
+            "phpdbg -qrr vendor/bin/phpunit --configuration=. --colors=never --coverage-text"
         ]
     },
     "autoload-dev": {
@@ -30,7 +30,10 @@
             "Test\\LitGroup\\Str\\": "tests/"
         }
     },
-    "require": {},
+    "require": {
+        "php": "^7.1",
+        "ext-mbstring": "*"
+    },
     "require-dev": {
         "phpunit/phpunit": "^6.3"
     }
