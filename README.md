@@ -5,7 +5,7 @@
 ## Installation
 
 ```bash
-composer require litgroup/str:^0.2
+composer require litgroup/str:^0.2.1
 ```
 
 ## Example of usage
