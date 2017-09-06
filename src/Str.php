@@ -73,4 +73,9 @@ final class Str
     {
         return mb_strtoupper($str, self::ENCODING);
     }
+
+    public static function toLowerCase(string $str): string
+    {
+        return mb_strtolower($str, self::ENCODING);
+    }
 }

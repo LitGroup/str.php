@@ -85,4 +85,10 @@ class StrTest extends TestCase
         self::assertEquals('HELLO', Str::toUpperCase('hello'));
         self::assertEquals('ПРИВЕТ', Str::toUpperCase('привет'));
     }
+
+    function testToLowerCase(): void
+    {
+        self::assertEquals('hello', Str::toLowerCase('HELLO'));
+        self::assertEquals('привет', Str::toLowerCase('ПРИВЕТ'));
+    }
 }
