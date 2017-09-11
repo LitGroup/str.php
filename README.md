@@ -1,5 +1,10 @@
 # String utils for PHP 7
 
+> String utils for PHP.
+
+[![Version](https://img.shields.io/packagist/v/litgroup/str.svg)](https://packagist.org/packages/litgroup/str)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)][license]
+[![Downloads](https://img.shields.io/packagist/dt/litgroup/str.svg)](https://packagist.org/packages/litgroup/str)
 [![Build Status](https://travis-ci.org/LitGroup/str.php.svg?branch=master)](https://travis-ci.org/LitGroup/str.php)
 
 ## Installation
@@ -48,3 +53,5 @@ if ($emailPattern->isSatisfiedBy('john@example.com')) {
     echo 'This is a valid email address!';
 }
 ```
+
+[license]: https://raw.githubusercontent.com/LitGroup/str.php/master/LICENSE
