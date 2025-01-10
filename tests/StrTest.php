@@ -33,13 +33,13 @@ class StrTest extends TestCase
 {
     private static $systemEncoding;
 
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
         self::$systemEncoding = mb_internal_encoding();
         mb_internal_encoding('7bit');
     }
 
-    public static function tearDownAfterClass()
+    public static function tearDownAfterClass(): void
     {
         mb_internal_encoding(self::$systemEncoding);
     }
